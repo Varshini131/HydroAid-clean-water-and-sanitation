@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission - HydroAid</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">💧</div>
+                <span class="sidebar-title">HydroAid</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="villages.html" class="nav-item">
+                    <span class="nav-icon">🏘</span>
+                    <span class="nav-text">Villages</span>
+                </a>
+                <a href="requests.html" class="nav-item">
+                    <span class="nav-icon">📩</span>
+                    <span class="nav-text">Requests</span>
+                </a>
+                <a href="mission.html" class="nav-item active">
+                    <span class="nav-icon">🎯</span>
+                    <span class="nav-text">Mission</span>
+                </a>
+                <a href="community.html" class="nav-item">
+                    <span class="nav-icon">🌐</span>
+                    <span class="nav-text">Community</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙</span>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Your Mission Levels</h1>
+                <div class="mission-summary">
+                    <span>Total Donated: ₹<span id="totalDonated">0</span></span>
+                    <span>Levels Completed: <span id="levelsCompleted">0</span>/4</span>
+                </div>
+            </header>
+
+            <!-- Mission Levels -->
+            <section class="mission-levels">
+                <div class="level-card" data-level="1">
+                    <div class="level-header">
+                        <div class="level-icon">💧</div>
+                        <div class="level-info">
+                            <h3>Level 1 - Basic Water Filter</h3>
+                            <p class="level-description">Provide a basic water filtration system for a small family</p>
+                            <div class="level-amount">₹100</div>
+                        </div>
+                    </div>
+                    <div class="level-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <div class="progress-text">₹0 / ₹100</div>
+                    </div>
+                    <button class="btn btn-primary donate-btn" data-level="1" data-amount="100">
+                        Donate ₹100
+                    </button>
+                    <div class="level-status" style="display: none;">
+                        <span class="status-icon">✅</span>
+                        <span class="status-text">Completed! Thank you for your contribution.</span>
+                    </div>
+                </div>
+
+                <div class="level-card" data-level="2">
+                    <div class="level-header">
+                        <div class="level-icon">🚰</div>
+                        <div class="level-info">
+                            <h3>Level 2 - Hand Pump Setup</h3>
+                            <p class="level-description">Install a hand pump to provide clean water access for a community</p>
+                            <div class="level-amount">₹250</div>
+                        </div>
+                    </div>
+                    <div class="level-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <div class="progress-text">₹0 / ₹250</div>
+                    </div>
+                    <button class="btn btn-primary donate-btn" data-level="2" data-amount="250">
+                        Donate ₹250
+                    </button>
+                    <div class="level-status" style="display: none;">
+                        <span class="status-icon">✅</span>
+                        <span class="status-text">Completed! Thank you for your contribution.</span>
+                    </div>
+                </div>
+
+                <div class="level-card" data-level="3">
+                    <div class="level-header">
+                        <div class="level-icon">🌊</div>
+                        <div class="level-info">
+                            <h3>Level 3 - Mini Water Tank</h3>
+                            <p class="level-description">Build a small water storage tank for consistent water supply</p>
+                            <div class="level-amount">₹500</div>
+                        </div>
+                    </div>
+                    <div class="level-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <div class="progress-text">₹0 / ₹500</div>
+                    </div>
+                    <button class="btn btn-primary donate-btn" data-level="3" data-amount="500">
+                        Donate ₹500
+                    </button>
+                    <div class="level-status" style="display: none;">
+                        <span class="status-icon">✅</span>
+                        <span class="status-text">Completed! Thank you for your contribution.</span>
+                    </div>
+                </div>
+
+                <div class="level-card" data-level="4">
+                    <div class="level-header">
+                        <div class="level-icon">🏞</div>
+                        <div class="level-info">
+                            <h3>Level 4 - Rainwater Harvest System</h3>
+                            <p class="level-description">Install a complete rainwater harvesting system for sustainable water collection</p>
+                            <div class="level-amount">₹1000</div>
+                        </div>
+                    </div>
+                    <div class="level-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <div class="progress-text">₹0 / ₹1000</div>
+                    </div>
+                    <button class="btn btn-primary donate-btn" data-level="4" data-amount="1000">
+                        Donate ₹1000
+                    </button>
+                    <div class="level-status" style="display: none;">
+                        <span class="status-icon">✅</span>
+                        <span class="status-text">Completed! Thank you for your contribution.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievement Section -->
+            <section class="achievement-section">
+                <h2>Your Impact</h2>
+                <div class="achievement-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🏆</div>
+                        <h3>Water Hero</h3>
+                        <p>Complete all 4 mission levels</p>
+                        <div class="achievement-status" id="waterHeroStatus">Locked</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">💝</div>
+                        <h3>First Donor</h3>
+                        <p>Make your first donation</p>
+                        <div class="achievement-status" id="firstDonorStatus">Locked</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🌟</div>
+                        <h3>Consistent Helper</h3>
+                        <p>Donate to 3 different levels</p>
+                        <div class="achievement-status" id="consistentHelperStatus">Locked</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/mission.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HydroAid</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">💧</div>
+                <span class="sidebar-title">HydroAid</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="villages.html" class="nav-item">
+                    <span class="nav-icon">🏘</span>
+                    <span class="nav-text">Villages</span>
+                </a>
+                <a href="requests.html" class="nav-item">
+                    <span class="nav-icon">📩</span>
+                    <span class="nav-text">Requests</span>
+                </a>
+                <a href="mission.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span class="nav-text">Mission</span>
+                </a>
+                <a href="community.html" class="nav-item">
+                    <span class="nav-icon">🌐</span>
+                    <span class="nav-text">Community</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙</span>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Dashboard</h1>
+                <div class="user-info">
+                    <span id="userEmail">Loading...</span>
+                </div>
+            </header>
+
+            <!-- Summary Cards -->
+            <section class="summary-section">
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <div class="card-icon">🏘</div>
+                        <div class="card-content">
+                            <h3>Total Villages</h3>
+                            <div class="card-number">125</div>
+                            <div class="card-change positive">+12 this month</div>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-icon alert">🚨</div>
+                        <div class="card-content">
+                            <h3>Water Alerts</h3>
+                            <div class="card-number">8</div>
+                            <div class="card-change negative">-3 from last week</div>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-icon">💧</div>
+                        <div class="card-content">
+                            <h3>Aid Distributed</h3>
+                            <div class="card-number">₹2.5M</div>
+                            <div class="card-change positive">+15% this month</div>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-icon">👥</div>
+                        <div class="card-content">
+                            <h3>Lives Impacted</h3>
+                            <div class="card-number">50,000+</div>
+                            <div class="card-change positive">Growing daily</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="chart-container">
+                    <h2>Aid Distribution Overview</h2>
+                    <div class="chart-placeholder">
+                        <canvas id="aidChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Requests Table -->
+            <section class="table-section">
+                <div class="table-header">
+                    <h2>Recent Aid Requests</h2>
+                    <a href="requests.html" class="btn btn-outline btn-small">View All</a>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Village</th>
+                                <th>Request Type</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rajpur Village</td>
+                                <td>Water Pump Repair</td>
+                                <td><span class="status urgent">Urgent</span></td>
+                                <td>2024-01-15</td>
+                                <td><span class="priority high">High</span></td>
+                            </tr>
+                            <tr>
+                                <td>Sunset Valley</td>
+                                <td>Water Filter Installation</td>
+                                <td><span class="status in-progress">In Progress</span></td>
+                                <td>2024-01-14</td>
+                                <td><span class="priority medium">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td>Green Hills</td>
+                                <td>Tank Maintenance</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td>2024-01-13</td>
+                                <td><span class="priority low">Low</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Recent Donations -->
+            <section class="donations-section">
+                <div class="section-header">
+                    <h2>Recent Donations</h2>
+                </div>
+                <div id="donations-list" class="donations-list">
+                    <div class="loading">Loading donations...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

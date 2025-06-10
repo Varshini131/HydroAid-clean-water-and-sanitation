@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villages - HydroAid</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">💧</div>
+                <span class="sidebar-title">HydroAid</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="villages.html" class="nav-item active">
+                    <span class="nav-icon">🏘</span>
+                    <span class="nav-text">Villages</span>
+                </a>
+                <a href="requests.html" class="nav-item">
+                    <span class="nav-icon">📩</span>
+                    <span class="nav-text">Requests</span>
+                </a>
+                <a href="mission.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span class="nav-text">Mission</span>
+                </a>
+                <a href="community.html" class="nav-item">
+                    <span class="nav-icon">🌐</span>
+                    <span class="nav-text">Community</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙</span>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Villages</h1>
+                <button id="addVillageBtn" class="btn btn-primary">Add Village</button>
+            </header>
+
+            <!-- Villages Table -->
+            <section class="table-section">
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Population</th>
+                                <th>Water Status</th>
+                                <th>Last Updated</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rajpur Village</td>
+                                <td>Maharashtra, India</td>
+                                <td>2,500</td>
+                                <td><span class="status urgent">Critical</span></td>
+                                <td>2024-01-15</td>
+                                <td>
+                                    <button class="btn-icon" title="View Details">👁</button>
+                                    <button class="btn-icon" title="Edit">✏️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sunset Valley</td>
+                                <td>Rajasthan, India</td>
+                                <td>1,200</td>
+                                <td><span class="status in-progress">Improving</span></td>
+                                <td>2024-01-14</td>
+                                <td>
+                                    <button class="btn-icon" title="View Details">👁</button>
+                                    <button class="btn-icon" title="Edit">✏️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Green Hills</td>
+                                <td>Karnataka, India</td>
+                                <td>3,800</td>
+                                <td><span class="status completed">Good</span></td>
+                                <td>2024-01-13</td>
+                                <td>
+                                    <button class="btn-icon" title="View Details">👁</button>
+                                    <button class="btn-icon" title="Edit">✏️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Mountain View</td>
+                                <td>Himachal Pradesh, India</td>
+                                <td>850</td>
+                                <td><span class="status urgent">Critical</span></td>
+                                <td>2024-01-12</td>
+                                <td>
+                                    <button class="btn-icon" title="View Details">👁</button>
+                                    <button class="btn-icon" title="Edit">✏️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>River Side</td>
+                                <td>West Bengal, India</td>
+                                <td>4,200</td>
+                                <td><span class="status completed">Excellent</span></td>
+                                <td>2024-01-11</td>
+                                <td>
+                                    <button class="btn-icon" title="View Details">👁</button>
+                                    <button class="btn-icon" title="Edit">✏️</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Add Village Modal -->
+            <div id="addVillageModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Add New Village</h2>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <form id="addVillageForm" class="modal-form">
+                        <div class="form-group">
+                            <label for="villageName">Village Name</label>
+                            <input type="text" id="villageName" name="villageName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="villageLocation">Location</label>
+                            <input type="text" id="villageLocation" name="villageLocation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="villagePopulation">Population</label>
+                            <input type="number" id="villagePopulation" name="villagePopulation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="waterStatus">Water Status</label>
+                            <select id="waterStatus" name="waterStatus" required>
+                                <option value="">Select Status</option>
+                                <option value="critical">Critical</option>
+                                <option value="improving">Improving</option>
+                                <option value="good">Good</option>
+                                <option value="excellent">Excellent</option>
+                            </select>
+                        </div>
+                        <div class="modal-actions">
+                            <button type="button" class="btn btn-outline modal-cancel">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Add Village</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/villages.js"></script>
+</body>
+</html>

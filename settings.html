@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - HydroAid</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">💧</div>
+                <span class="sidebar-title">HydroAid</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="villages.html" class="nav-item">
+                    <span class="nav-icon">🏘</span>
+                    <span class="nav-text">Villages</span>
+                </a>
+                <a href="requests.html" class="nav-item">
+                    <span class="nav-icon">📩</span>
+                    <span class="nav-text">Requests</span>
+                </a>
+                <a href="mission.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span class="nav-text">Mission</span>
+                </a>
+                <a href="community.html" class="nav-item">
+                    <span class="nav-icon">🌐</span>
+                    <span class="nav-text">Community</span>
+                </a>
+                <a href="settings.html" class="nav-item active">
+                    <span class="nav-icon">⚙</span>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Settings</h1>
+                <p class="page-subtitle">Manage your account preferences</p>
+            </header>
+
+            <!-- Profile Settings -->
+            <section class="settings-section">
+                <div class="settings-card">
+                    <h2>Profile Information</h2>
+                    <form id="profileForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="displayName">Display Name</label>
+                            <input type="text" id="displayName" name="displayName" placeholder="Your display name">
+                        </div>
+                        <div class="form-group">
+                            <label for="currentEmail">Email Address</label>
+                            <input type="email" id="currentEmail" name="currentEmail" readonly>
+                            <small class="form-help">Email cannot be changed at this time</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="City, State, Country">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Security Settings -->
+            <section class="settings-section">
+                <div class="settings-card">
+                    <h2>Security</h2>
+                    <form id="passwordForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword" name="currentPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword" name="newPassword" required minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmNewPassword">Confirm New Password</label>
+                            <input type="password" id="confirmNewPassword" name="confirmNewPassword" required minlength="6">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Notification Settings -->
+            <section class="settings-section">
+                <div class="settings-card">
+                    <h2>Notifications</h2>
+                    <div class="settings-form">
+                        <div class="notification-setting">
+                            <div class="setting-info">
+                                <h3>Email Notifications</h3>
+                                <p>Receive updates about your donations and mission progress</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="emailNotifications" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="notification-setting">
+                            <div class="setting-info">
+                                <h3>Water Alerts</h3>
+                                <p>Get notified about urgent water requests in your area</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="waterAlerts" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="notification-setting">
+                            <div class="setting-info">
+                                <h3>Community Updates</h3>
+                                <p>Stay informed about community events and volunteer opportunities</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="communityUpdates">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <button class="btn btn-primary">Save Preferences</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donation History -->
+            <section class="settings-section">
+                <div class="settings-card">
+                    <h2>Donation History</h2>
+                    <div class="donation-history">
+                        <div class="donation-summary">
+                            <div class="summary-item">
+                                <span class="summary-label">Total Donated:</span>
+                                <span class="summary-value" id="totalDonatedAmount">₹0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Levels Completed:</span>
+                                <span class="summary-value" id="completedLevels">0/4</span>
+                            </div>
+                        </div>
+                        <div class="history-table">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Level</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="donationHistoryBody">
+                                    <tr>
+                                        <td colspan="4" class="no-data">No donations yet. <a href="mission.html">Start your mission!</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Account Actions -->
+            <section class="settings-section">
+                <div class="settings-card danger-zone">
+                    <h2>Account Actions</h2>
+                    <div class="danger-actions">
+                        <div class="danger-item">
+                            <div class="danger-info">
+                                <h3>Download Data</h3>
+                                <p>Download a copy of all your account data and donation history</p>
+                            </div>
+                            <button class="btn btn-outline">Download Data</button>
+                        </div>
+                        <div class="danger-item">
+                            <div class="danger-info">
+                                <h3>Delete Account</h3>
+                                <p>Permanently delete your account and all associated data</p>
+                            </div>
+                            <button class="btn btn-danger">Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/settings.js"></script>
+</body>
+</html>

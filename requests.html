@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requests - HydroAid</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">💧</div>
+                <span class="sidebar-title">HydroAid</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="villages.html" class="nav-item">
+                    <span class="nav-icon">🏘</span>
+                    <span class="nav-text">Villages</span>
+                </a>
+                <a href="requests.html" class="nav-item active">
+                    <span class="nav-icon">📩</span>
+                    <span class="nav-text">Requests</span>
+                </a>
+                <a href="mission.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span class="nav-text">Mission</span>
+                </a>
+                <a href="community.html" class="nav-item">
+                    <span class="nav-icon">🌐</span>
+                    <span class="nav-text">Community</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙</span>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Aid Requests</h1>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="urgent">Urgent</button>
+                    <button class="filter-btn" data-filter="normal">Normal</button>
+                    <button class="filter-btn" data-filter="resolved">Resolved</button>
+                </div>
+            </header>
+
+            <!-- Requests Table -->
+            <section class="table-section">
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Village</th>
+                                <th>Request Type</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Priority</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="requestsTableBody">
+                            <tr data-status="urgent">
+                                <td>Rajpur Village</td>
+                                <td>Water Pump Repair</td>
+                                <td>Main water pump has stopped working, affecting 500 families</td>
+                                <td><span class="status urgent">Urgent</span></td>
+                                <td><span class="priority high">High</span></td>
+                                <td>2024-01-15</td>
+                                <td>
+                                    <button class="btn-icon update-status" title="Update Status">📝</button>
+                                    <button class="btn-icon" title="View Details">👁</button>
+                                </td>
+                            </tr>
+                            <tr data-status="normal">
+                                <td>Sunset Valley</td>
+                                <td>Water Filter Installation</td>
+                                <td>Need new water filtration system for community center</td>
+                                <td><span class="status in-progress">In Progress</span></td>
+                                <td><span class="priority medium">Medium</span></td>
+                                <td>2024-01-14</td>
+                                <td>
+                                    <button class="btn-icon update-status" title="Update Status">📝</button>
+                                    <button class="btn-icon" title="View Details">👁</button>
+                                </td>
+                            </tr>
+                            <tr data-status="resolved">
+                                <td>Green Hills</td>
+                                <td>Tank Maintenance</td>
+                                <td>Routine maintenance for water storage tank</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><span class="priority low">Low</span></td>
+                                <td>2024-01-13</td>
+                                <td>
+                                    <button class="btn-icon update-status" title="Update Status">📝</button>
+                                    <button class="btn-icon" title="View Details">👁</button>
+                                </td>
+                            </tr>
+                            <tr data-status="urgent">
+                                <td>Mountain View</td>
+                                <td>Emergency Water Supply</td>
+                                <td>Contaminated water source, need immediate alternative</td>
+                                <td><span class="status urgent">Urgent</span></td>
+                                <td><span class="priority high">High</span></td>
+                                <td>2024-01-12</td>
+                                <td>
+                                    <button class="btn-icon update-status" title="Update Status">📝</button>
+                                    <button class="btn-icon" title="View Details">👁</button>
+                                </td>
+                            </tr>
+                            <tr data-status="normal">
+                                <td>River Side</td>
+                                <td>Pipe Installation</td>
+                                <td>Install new distribution pipes for better water access</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><span class="priority medium">Medium</span></td>
+                                <td>2024-01-11</td>
+                                <td>
+                                    <button class="btn-icon update-status" title="Update Status">📝</button>
+                                    <button class="btn-icon" title="View Details">👁</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/requests.js"></script>
+</body>
+</html>

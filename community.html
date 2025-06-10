@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - HydroAid</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">💧</div>
+                <span class="sidebar-title">HydroAid</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="villages.html" class="nav-item">
+                    <span class="nav-icon">🏘</span>
+                    <span class="nav-text">Villages</span>
+                </a>
+                <a href="requests.html" class="nav-item">
+                    <span class="nav-icon">📩</span>
+                    <span class="nav-text">Requests</span>
+                </a>
+                <a href="mission.html" class="nav-item">
+                    <span class="nav-icon">🎯</span>
+                    <span class="nav-text">Mission</span>
+                </a>
+                <a href="community.html" class="nav-item active">
+                    <span class="nav-icon">🌐</span>
+                    <span class="nav-text">Community</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙</span>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Join Our Community</h1>
+                <p class="page-subtitle">Connect with fellow water advocates and make a bigger impact together</p>
+            </header>
+
+            <!-- Community Join Section -->
+            <section class="community-join">
+                <div class="join-card">
+                    <h2>Be Part of the Movement</h2>
+                    <p>Join thousands of passionate individuals working towards providing clean water access to everyone. Your voice and actions matter!</p>
+                    
+                    <form id="joinCommunityForm" class="join-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Why do you want to join our mission?</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Share your motivation to help provide clean water..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Join Community</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Social Links -->
+            <section class="social-section">
+                <h2>Connect With Us</h2>
+                <div class="social-grid">
+                    <a href="#" class="social-link whatsapp">
+                        <div class="social-icon">📱</div>
+                        <div class="social-content">
+                            <h3>WhatsApp Group</h3>
+                            <p>Join our active WhatsApp community for real-time updates and discussions</p>
+                            <span class="social-cta">Join Group →</span>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="social-link instagram">
+                        <div class="social-icon">📸</div>
+                        <div class="social-content">
+                            <h3>Follow on Instagram</h3>
+                            <p>See the impact of your donations through photos and stories</p>
+                            <span class="social-cta">Follow Us →</span>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="social-link telegram">
+                        <div class="social-icon">✈️</div>
+                        <div class="social-content">
+                            <h3>Telegram Channel</h3>
+                            <p>Get instant notifications about urgent water requests</p>
+                            <span class="social-cta">Join Channel →</span>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="social-link discord">
+                        <div class="social-icon">💬</div>
+                        <div class="social-content">
+                            <h3>Discord Server</h3>
+                            <p>Chat with volunteers and coordinate relief efforts</p>
+                            <span class="social-cta">Join Server →</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Volunteer Section -->
+            <section class="volunteer-section">
+                <div class="volunteer-card">
+                    <div class="volunteer-content">
+                        <h2>Volunteer With Us</h2>
+                        <p>Ready to make a hands-on difference? Join our volunteer program and help us bring clean water solutions directly to communities in need.</p>
+                        <ul class="volunteer-benefits">
+                            <li>✅ On-ground experience with water projects</li>
+                            <li>✅ Training and certification programs</li>
+                            <li>✅ Connect with like-minded individuals</li>
+                            <li>✅ Make a direct impact on lives</li>
+                        </ul>
+                        <button class="btn btn-primary btn-large">Become a Volunteer</button>
+                    </div>
+                    <div class="volunteer-image">
+                        <div class="volunteer-graphic">
+                            <span class="volunteer-emoji">🤝</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Members -->
+            <section class="members-section">
+                <h2>Recent Community Members</h2>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-avatar">👤</div>
+                        <div class="member-info">
+                            <h3>Priya Sharma</h3>
+                            <p>Volunteer Coordinator</p>
+                            <span class="member-location">Mumbai, India</span>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-avatar">👤</div>
+                        <div class="member-info">
+                            <h3>Rahul Kumar</h3>
+                            <p>Field Engineer</p>
+                            <span class="member-location">Delhi, India</span>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-avatar">👤</div>
+                        <div class="member-info">
+                            <h3>Anita Desai</h3>
+                            <p>Community Organizer</p>
+                            <span class="member-location">Bangalore, India</span>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-avatar">👤</div>
+                        <div class="member-info">
+                            <h3>Vikram Singh</h3>
+                            <p>Water Quality Expert</p>
+                            <span class="member-location">Jaipur, India</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/community.js"></script>
+</body>
+</html>
